@@ -1,0 +1,1 @@
+export const PITS_PER_PLAYER = 7;
