@@ -19,7 +19,7 @@ public class KalahBoardService {
         return currentPitId + 1;
     }
 
-    protected int getNoOfMarbles(int pitId) {
+    public int getNoOfMarbles(int pitId) {
         Pit pit = kalahaBoard.getPitById(pitId);
         return pit.getNoOfMarbles();
     }

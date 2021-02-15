@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class GameServiceIT extends KalahaGameManagerBaseTest {
+public class GameServiceIT extends KalahaGameBaseTest {
 
     @Before
     public void setup(){
@@ -54,40 +54,5 @@ public class GameServiceIT extends KalahaGameManagerBaseTest {
     public void testStartGame() {
         gameService.startGame();
         assertTrue(resultEvaluatorService.gameOver());
-    }
-
-    @Test
-    public void testIsLastSeedInOwnEmptyPit() {
-
-    }
-
-    @Test
-    public void testIsOwnPit() {
-    }
-
-    @Test
-    public void testGetOpositePit() {
-
-    }
-
-    @Test
-    public void testSkippingOpponentBank() {
-
-    }
-
-    @Test
-    public void testGameEnd() {
-    }
-
-    @Test
-    public void testGameResult() {
-    }
-
-    @Test
-    public void testCaputringSeeds() {
-    }
-
-    @Test
-    public void testRepeatTurn() {
     }
 }
