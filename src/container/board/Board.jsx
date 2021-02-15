@@ -30,27 +30,7 @@ class Board extends Component {
     return response;
   };
 
-  moveMakerHandler = () => {
-    // this.setState({ loading: true });
-    const move = {
-      playerNumber: 1,
-      selectedPit: 3,
-    };
-
-    axios
-      .post("/move", move)
-      .then((response) => {
-        // console.log(response);
-        // this.setState({ loading: false});
-      })
-      .catch((error) => {
-        // console.log(error);
-        // this.setState({ loading: false});
-      });
-  };
-
   componentDidMount() {
-    // this.setState({ board: this.response() });
     axios
       .get("/game")
       .then((response) => {
