@@ -1,8 +1,8 @@
 package com.shailendra.exception;
 
-public class InvalidMoveException extends RuntimeException{
+public class InvalidMoveException extends RuntimeException {
 
-    public InvalidMoveException(){
+    public InvalidMoveException() {
 
     }
 

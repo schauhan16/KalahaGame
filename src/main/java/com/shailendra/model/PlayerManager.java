@@ -11,7 +11,7 @@ import static com.shailendra.config.KalahaGameConfig.NUMBER_OF_PLAYER;
 @Component
 public class PlayerManager implements Iterable<Player> {
 
-    private List<Player> playerList = new ArrayList<>();
+    private final List<Player> playerList = new ArrayList<>();
 
     private Player activePlayer;
 

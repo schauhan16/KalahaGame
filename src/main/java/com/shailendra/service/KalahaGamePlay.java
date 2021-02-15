@@ -35,6 +35,7 @@ public class KalahaGamePlay implements GamePlay {
 
     @Autowired
     protected MoveValidatorService moveValidatorService;
+    protected List<Integer> winSeq = new ArrayList<>();
 
     public void play() {
         int pitId = selectPitToMove();
@@ -80,9 +81,6 @@ public class KalahaGamePlay implements GamePlay {
         }
         return currentPitId;
     }
-
-
-    protected List<Integer> winSeq = new ArrayList<>();
 
     protected int selectPitToMove() {
         return winSeq.remove(0);

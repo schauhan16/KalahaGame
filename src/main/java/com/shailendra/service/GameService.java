@@ -29,11 +29,11 @@ public class GameService {
         displayService.displayBoard();
     }
 
-    public GameData getGameData(){
+    public GameData getGameData() {
         GameData data = new GameData(kalahaGameManager.getActivePlayer().getPlayerNumber(), kalahaGameManager.getBoard());
         boolean gameOver = resultEvaluatorService.gameOver();
         data.setGameOver(gameOver);
-        if(gameOver){
+        if (gameOver) {
             data.setWinner(resultEvaluatorService.getWinner());
         }
         return data;
@@ -41,7 +41,7 @@ public class GameService {
 
     public GameData makeMove(int pitId) {
         gamePlay.makeMove(pitId);
-        if(resultEvaluatorService.gameOver()){
+        if (resultEvaluatorService.gameOver()) {
             resultEvaluatorService.evaluate();
         }
         return getGameData();

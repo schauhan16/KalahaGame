@@ -25,7 +25,7 @@ public class MoveValidatorService {
 
     private void pitIsNonEmpty(int pitId) {
         Pit pit = kalahaGameManager.getBoard().getPitById(pitId);
-        if(pit.isEmpty()){
+        if (pit.isEmpty()) {
             throw new InvalidMoveException(String.format("Pit %d is empty. Please select a non-empty pit.", pitId));
         }
     }
@@ -35,7 +35,7 @@ public class MoveValidatorService {
                 .stream()
                 .anyMatch(pit -> pitId == pit.getId());
 
-        if(!isPlayerPit){
+        if (!isPlayerPit) {
             throw new InvalidMoveException(String.format("Pit %d does not belongs to Player %d.", pitId, player.getPlayerNumber()));
         }
     }
@@ -43,7 +43,7 @@ public class MoveValidatorService {
     protected void shouldNotBeABank(int pitId) {
         boolean isBank = kalahaGameManager.getBoard().getPitById(pitId).isBank();
 
-        if(isBank){
+        if (isBank) {
             throw new InvalidMoveException(String.format("Pit %d is a Bank.", pitId));
         }
     }

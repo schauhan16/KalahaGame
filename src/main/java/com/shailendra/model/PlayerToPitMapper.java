@@ -10,13 +10,13 @@ import static com.shailendra.config.KalahaGameConfig.PITS_FOR_PLAYER;
 
 public class PlayerToPitMapper {
 
-    private Map<Player, List<Pit>> map = new HashMap<>();
+    private final Map<Player, List<Pit>> map = new HashMap<>();
 
     private KalahaBoard kalahaBoard;
 
     private PlayerManager playerManager;
 
-    public PlayerToPitMapper(){
+    public PlayerToPitMapper() {
 
     }
 

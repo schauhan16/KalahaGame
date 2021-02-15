@@ -10,7 +10,7 @@ public class DisplayService {
     @Autowired
     private Board board;
 
-    public void displayBoard(){
+    public void displayBoard() {
         board.display();
     }
 

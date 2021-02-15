@@ -5,10 +5,9 @@ public class Player {
     private boolean isActive;
     private int playerNumber;
 
-    public Player(int playerNumber){
+    public Player(int playerNumber) {
         this();
         this.playerNumber = playerNumber;
-
     }
 
     public Player() {

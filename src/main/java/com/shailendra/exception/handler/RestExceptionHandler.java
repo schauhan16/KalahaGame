@@ -16,7 +16,7 @@ import static org.springframework.core.Ordered.HIGHEST_PRECEDENCE;
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(InvalidMoveException.class)
-    protected ResponseEntity<Object> handleInvalidMove(InvalidMoveException exception){
+    protected ResponseEntity<Object> handleInvalidMove(InvalidMoveException exception) {
         ApiError apiError = new ApiError(HttpStatus.NOT_ACCEPTABLE);
         apiError.setMessage(exception.getMessage());
         return buildResponseEntity(apiError);

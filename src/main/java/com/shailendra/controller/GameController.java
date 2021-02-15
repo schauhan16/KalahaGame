@@ -28,7 +28,7 @@ public class GameController {
     }
 
     @GetMapping("/reset")
-    public GameData resetGame(){
+    public GameData resetGame() {
         return gameService.resetGame();
     }
 }

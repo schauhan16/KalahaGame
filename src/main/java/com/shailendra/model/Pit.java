@@ -38,7 +38,7 @@ public class Pit {
     }
 
     @JsonIgnore
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return this.noOfMarbles == 0;
     }
 

@@ -16,6 +16,7 @@ public class KalahaGameManager {
 
     @Autowired
     private PlayerToPitMapper mapper;
+    private String message;
 
     public Pit getBankForPlayer(Player player) {
         return mapper.getBankForPlayer(player);
@@ -58,8 +59,6 @@ public class KalahaGameManager {
     public Player getActivePlayer() {
         return playerManager.getActivePlayer();
     }
-
-    private String message;
 
     public String getMessage() {
         return message;
