@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class ResultEvaluatorServiceTest extends KalahaGameBaseTest{
+public class ResultEvaluatorServiceTest extends KalahaGameManagerBaseTest {
 
     @Before
     public void setup(){

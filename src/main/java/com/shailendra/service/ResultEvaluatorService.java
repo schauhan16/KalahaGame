@@ -1,6 +1,6 @@
 package com.shailendra.service;
 
-import com.shailendra.model.KalahaGame;
+import com.shailendra.model.KalahaGameManager;
 import com.shailendra.model.Pit;
 import com.shailendra.model.Player;
 import com.shailendra.model.PlayerManager;
@@ -18,7 +18,7 @@ public class ResultEvaluatorService {
     private static final Logger LOG = LoggerFactory.getLogger(ResultEvaluatorService.class);
 
     @Autowired
-    private KalahaGame kalahaGame;
+    private KalahaGameManager kalahaGameManager;
 
     @Autowired
     private PlayerManager playerManager;
@@ -29,7 +29,7 @@ public class ResultEvaluatorService {
     }
 
     private boolean isPitsEmpty(Player player) {
-        return kalahaGame.getPitsForPlayer(player)
+        return kalahaGameManager.getPitsForPlayer(player)
                 .stream()
                 .allMatch(Pit::isEmpty);
     }
@@ -47,28 +47,28 @@ public class ResultEvaluatorService {
 
     private void moveRemainingMarbleToPlayerBank(Player player) {
         LOG.info("Emptying pit for player {}", player.getPlayerNumber());
-        kalahaGame.getPitsForPlayer(player)
+        kalahaGameManager.getPitsForPlayer(player)
                 .forEach(pit -> {
                     int marbleCount = pit.getNoOfMarbles();
                     pit.setEmpty();
-                    kalahaGame.depositMarbleInBank(player, marbleCount);
+                    kalahaGameManager.depositMarbleInBank(player, marbleCount);
                 });
 
     }
 
     private int returnResult() {
-        int marblesInPlalyer1 = kalahaGame.getBoard().getPitById(PITS_FOR_PLAYER).getNoOfMarbles();
-        int marblesInPlalyer2 = kalahaGame.getBoard().getPitById(TOTAL_NUMBER_OF_PITS).getNoOfMarbles();
+        int marblesInPlalyer1 = kalahaGameManager.getBoard().getPitById(PITS_FOR_PLAYER).getNoOfMarbles();
+        int marblesInPlalyer2 = kalahaGameManager.getBoard().getPitById(TOTAL_NUMBER_OF_PITS).getNoOfMarbles();
 
         int playerNumber = 0;
         if (marblesInPlalyer1 == marblesInPlalyer2) {
-            System.out.println("It's a tie");
+            LOG.info("It's a tie");
         } else if (marblesInPlalyer1 > marblesInPlalyer2) {
             playerNumber = 1;
-            System.out.println("Player 1 won");
+            LOG.info("Player 1 won");
         } else {
             playerNumber = 2;
-            System.out.println("Player 2 won");
+            LOG.info("Player 2 won");
         }
         return playerNumber;
     }

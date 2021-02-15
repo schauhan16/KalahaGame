@@ -2,11 +2,11 @@ package com.shailendra.model;
 
 public class GameData {
     private int activePlayer;
-    private KalahaBoard board;
+    private Board board;
     private boolean gameOver;
     private int winner;
 
-    public GameData(int id, KalahaBoard board) {
+    public GameData(int id, Board board) {
         this.activePlayer = id;
         this.board = board;
     }
@@ -19,11 +19,11 @@ public class GameData {
         this.activePlayer = activePlayer;
     }
 
-    public KalahaBoard getBoard() {
+    public Board getBoard() {
         return board;
     }
 
-    public void setBoard(KalahaBoard board) {
+    public void setBoard(Board board) {
         this.board = board;
     }
 

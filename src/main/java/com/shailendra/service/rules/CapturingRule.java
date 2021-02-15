@@ -1,6 +1,6 @@
 package com.shailendra.service.rules;
 
-import com.shailendra.model.KalahaGame;
+import com.shailendra.model.KalahaGameManager;
 import com.shailendra.model.Pit;
 import com.shailendra.model.Player;
 import com.shailendra.service.KalahBoardService;
@@ -15,7 +15,7 @@ public class CapturingRule {
     private static final Logger LOG = LoggerFactory.getLogger(CapturingRule.class);
 
     @Autowired
-    private KalahaGame kalahaGame;
+    private KalahaGameManager kalahaGameManager;
 
     @Autowired
     private KalahBoardService boardService;
@@ -30,14 +30,14 @@ public class CapturingRule {
             LOG.info("Opposite pit id of {} is {}", pitId, oppositePit.getId());
             oppositePit.setEmpty();
             LOG.info("Capturing marbles {}", marbleCount);
-            Pit ownPit = kalahaGame.getBoard().getPitById(pitId);
+            Pit ownPit = kalahaGameManager.getBoard().getPitById(pitId);
             ownPit.setEmpty();
-            kalahaGame.depositMarbleInBank(player, marbleCount + 1);
+            kalahaGameManager.depositMarbleInBank(player, marbleCount + 1);
         }
     }
 
     private boolean wasOwnPitEmpty(Player player, int id) {
-        return kalahaGame.getPitsForPlayer(player)
+        return kalahaGameManager.getPitsForPlayer(player)
                 .stream()
                 .map(Pit::getId)
                 .filter(pitId -> pitId == id)

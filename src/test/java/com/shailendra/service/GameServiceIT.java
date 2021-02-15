@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class GameServiceIT extends KalahaGameBaseTest {
+public class GameServiceIT extends KalahaGameManagerBaseTest {
 
     @Before
     public void setup(){
@@ -41,13 +41,13 @@ public class GameServiceIT extends KalahaGameBaseTest {
             kalahaGamePlay.play();
 
         }
-        assertEquals(14, kalahaGame.getBankForPlayer(playerManager.getPlayer(2)).getNoOfMarbles());
-        assertEquals(25, kalahaGame.getBankForPlayer(playerManager.getPlayer(1)).getNoOfMarbles());
+        assertEquals(14, kalahaGameManager.getBankForPlayer(playerManager.getPlayer(2)).getNoOfMarbles());
+        assertEquals(25, kalahaGameManager.getBankForPlayer(playerManager.getPlayer(1)).getNoOfMarbles());
         assertTrue(resultEvaluatorService.gameOver());
 
         resultEvaluatorService.evaluate();
-        assertEquals(14, kalahaGame.getBankForPlayer(playerManager.getPlayer(2)).getNoOfMarbles());
-        assertEquals(34, kalahaGame.getBankForPlayer(playerManager.getPlayer(1)).getNoOfMarbles());
+        assertEquals(14, kalahaGameManager.getBankForPlayer(playerManager.getPlayer(2)).getNoOfMarbles());
+        assertEquals(34, kalahaGameManager.getBankForPlayer(playerManager.getPlayer(1)).getNoOfMarbles());
     }
 
     @Test

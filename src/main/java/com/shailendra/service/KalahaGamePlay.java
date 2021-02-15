@@ -1,10 +1,11 @@
 package com.shailendra.service;
 
 import com.shailendra.model.GamePlay;
-import com.shailendra.model.KalahaGame;
+import com.shailendra.model.KalahaGameManager;
 import com.shailendra.model.Player;
 import com.shailendra.service.rules.CapturingRule;
 import com.shailendra.service.rules.RepeatTurnRule;
+import com.shailendra.service.validator.MoveValidatorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,10 @@ import java.util.List;
 
 @Service
 public class KalahaGamePlay implements GamePlay {
-    Logger LOG = LoggerFactory.getLogger(KalahaGamePlay.class);
+    private static final Logger LOG = LoggerFactory.getLogger(KalahaGamePlay.class);
 
     @Autowired
-    protected KalahaGame kalahaGame;
+    protected KalahaGameManager kalahaGameManager;
 
     @Autowired
     protected DisplayService displayService;
@@ -42,7 +43,7 @@ public class KalahaGamePlay implements GamePlay {
 
     @Override
     public void makeMove(int pitId) {
-        Player player = kalahaGame.getActivePlayer();
+        Player player = kalahaGameManager.getActivePlayer();
         LOG.info("Player {} selected for pit: {}", player.getPlayerNumber(), pitId);
 
         moveValidatorService.validate(player, pitId);
@@ -57,21 +58,21 @@ public class KalahaGamePlay implements GamePlay {
 
         if (!repeatTurnRule.evaluate(player, lastPitId)) {
             LOG.info("Changing turn!!!");
-            kalahaGame.changeActivePlayer();
+            kalahaGameManager.changeActivePlayer();
         }
         displayService.displayBoard();
     }
 
     @Override
     public void restartGame() {
-        kalahaGame.reset();
+        kalahaGameManager.reset();
     }
 
     protected int executeTurn(Player player, int pitId, int marbleCount) {
         int currentPitId = pitId;
         while (marbleCount > 0) {
             int nextPitId = boardService.getNextPit(currentPitId);
-            if (!kalahaGame.isOpponentBank(player, nextPitId)) {
+            if (!kalahaGameManager.isOpponentBank(player, nextPitId)) {
                 boardService.incrementCount(nextPitId);
                 marbleCount--;
             }

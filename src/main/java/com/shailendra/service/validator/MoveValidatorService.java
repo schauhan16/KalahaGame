@@ -1,7 +1,7 @@
-package com.shailendra.service;
+package com.shailendra.service.validator;
 
 import com.shailendra.exception.InvalidMoveException;
-import com.shailendra.model.KalahaGame;
+import com.shailendra.model.KalahaGameManager;
 import com.shailendra.model.Pit;
 import com.shailendra.model.Player;
 import com.shailendra.model.PlayerToPitMapper;
@@ -15,7 +15,7 @@ public class MoveValidatorService {
     private PlayerToPitMapper playerToPitMapper;
 
     @Autowired
-    private KalahaGame kalahaGame;
+    private KalahaGameManager kalahaGameManager;
 
     public void validate(Player player, int pitId) {
         pitBelongsToPlayer(player, pitId);
@@ -23,7 +23,7 @@ public class MoveValidatorService {
     }
 
     private void pitIsNonEmpty(int pitId) {
-        Pit pit = kalahaGame.getBoard().getPitById(pitId);
+        Pit pit = kalahaGameManager.getBoard().getPitById(pitId);
         if(pit.isEmpty()){
             throw new InvalidMoveException(String.format("Pit %d is empty. Please select a non-empty pit", pitId));
         }

@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.shailendra.config.KalahaGameConfig.PITS_FOR_PLAYER;
 import static com.shailendra.config.KalahaGameConfig.TOTAL_NUMBER_OF_PITS;
 import static com.shailendra.util.CommonUtil.leftpad;
+import static java.util.stream.Collectors.toList;
 
 @Component
 public class KalahaBoard implements Board {
@@ -43,7 +43,10 @@ public class KalahaBoard implements Board {
     }
 
     private List<String> getSublist(int fromIndex, int toIndex, boolean reversed) {
-        List<String> pitsValue = pits.subList(fromIndex, toIndex - 1).stream().map(Pit::getNoOfMarbles).map(String::valueOf).collect(Collectors.toList());
+        List<String> pitsValue = pits.subList(fromIndex, toIndex - 1).stream()
+                .map(Pit::getNoOfMarbles)
+                .map(String::valueOf)
+                .collect(toList());
         if (reversed) {
             Collections.reverse(pitsValue);
         }
@@ -59,5 +62,4 @@ public class KalahaBoard implements Board {
     public List<Pit> getPits() {
         return pits;
     }
-
 }

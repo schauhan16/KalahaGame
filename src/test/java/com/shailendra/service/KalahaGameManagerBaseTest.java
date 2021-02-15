@@ -1,11 +1,12 @@
 package com.shailendra.service;
 
 import com.shailendra.model.KalahaBoard;
-import com.shailendra.model.KalahaGame;
+import com.shailendra.model.KalahaGameManager;
 import com.shailendra.model.PlayerManager;
 import com.shailendra.model.PlayerToPitMapper;
 import com.shailendra.service.rules.CapturingRule;
 import com.shailendra.service.rules.RepeatTurnRule;
+import com.shailendra.service.validator.MoveValidatorService;
 import org.junit.Before;
 import org.mockito.InjectMocks;
 import org.mockito.Spy;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class KalahaGameBaseTest {
+public class KalahaGameManagerBaseTest {
 
     @Spy
     @InjectMocks
@@ -26,7 +27,7 @@ public class KalahaGameBaseTest {
 
     @Spy
     @InjectMocks
-    protected KalahaGame kalahaGame;
+    protected KalahaGameManager kalahaGameManager;
 
     @Spy
     protected KalahaBoard kalahaBoard;

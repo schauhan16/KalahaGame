@@ -2,7 +2,7 @@ package com.shailendra.service;
 
 import com.shailendra.model.GameData;
 import com.shailendra.model.GamePlay;
-import com.shailendra.model.KalahaGame;
+import com.shailendra.model.KalahaGameManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ public class GameService {
     protected GamePlay gamePlay;
 
     @Autowired
-    protected KalahaGame kalahaGame;
+    protected KalahaGameManager kalahaGameManager;
 
     public void startGame() {
         do {
@@ -30,7 +30,7 @@ public class GameService {
     }
 
     public GameData getGameData(){
-        GameData data = new GameData(kalahaGame.getActivePlayer().getPlayerNumber(), kalahaGame.getBoard());
+        GameData data = new GameData(kalahaGameManager.getActivePlayer().getPlayerNumber(), kalahaGameManager.getBoard());
         boolean gameOver = resultEvaluatorService.gameOver();
         data.setGameOver(gameOver);
         if(gameOver){

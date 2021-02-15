@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.doReturn;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class KalahaGamePlayTest extends KalahaGameBaseTest {
+public class KalahaGameManagerPlayTest extends KalahaGameManagerBaseTest {
 
     @Before
     public void setup(){
@@ -23,7 +23,7 @@ public class KalahaGamePlayTest extends KalahaGameBaseTest {
         doReturn(4).when(kalahaGamePlay).selectPitToMove();
         kalahaGamePlay.play();
 
-        assertEquals(playerManager.getPlayer(2), kalahaGame.getActivePlayer());
+        assertEquals(playerManager.getPlayer(2), kalahaGameManager.getActivePlayer());
         assertEquals(0, kalahaBoard.getPitById(4).getNoOfMarbles());
         assertEquals(5, kalahaBoard.getPitById(5).getNoOfMarbles());
         assertEquals(5, kalahaBoard.getPitById(6).getNoOfMarbles());

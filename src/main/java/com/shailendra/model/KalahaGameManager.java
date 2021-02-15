@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class KalahaGame {
+public class KalahaGameManager {
 
     @Autowired
     private KalahaBoard kalahaBoard;
