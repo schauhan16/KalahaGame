@@ -61,9 +61,8 @@ public class KalahaGameBaseTest {
     @InjectMocks
     protected MoveValidatorService moveValidatorService;
 
-    //3, 4, 13, 3, 8, 6, 9, 5, 10, 9, 6, 2, 10, 1, 13, 6, 5, 11, 4, 12, 6, 5, 6, 1, 13
     protected static List<Integer> winningSeqForPlayer1 = Arrays.asList(3, 4, 13, 3, 8, 6, 9, 5, 10, 9, 6, 2, 10, 1, 13, 6, 5, 11, 4, 12, 2, 13);
-    protected static List<Integer> winningSeqForPlayer2 = Arrays.asList(1, 10, 13, 3, 9, 13, 12, 1, 13, 11, 5, 13);
+    protected static List<Integer> winningSeqForPlayer2 = Arrays.asList(1, 8, 2, 3, 9, 1, 8, 4, 8, 6, 12, 5);
 
     @Before
     public void setup() {

@@ -51,6 +51,22 @@ public class GameServiceIT extends KalahaGameBaseTest {
     }
 
     @Test
+    public void testPlayer2Win() {
+        for (Integer pitId : winningSeqForPlayer2) {
+            when(kalahaGamePlay.selectPitToMove()).thenReturn(pitId);
+            kalahaGamePlay.play();
+
+        }
+        assertEquals(9, kalahaGameManager.getBankForPlayer(playerManager.getPlayer(2)).getNoOfMarbles());
+        assertEquals(13, kalahaGameManager.getBankForPlayer(playerManager.getPlayer(1)).getNoOfMarbles());
+        assertTrue(resultEvaluatorService.gameOver());
+
+        resultEvaluatorService.evaluate();
+        assertEquals(35, kalahaGameManager.getBankForPlayer(playerManager.getPlayer(2)).getNoOfMarbles());
+        assertEquals(13, kalahaGameManager.getBankForPlayer(playerManager.getPlayer(1)).getNoOfMarbles());
+    }
+
+    @Test
     public void testStartGame() {
         gameService.startGame();
         assertTrue(resultEvaluatorService.gameOver());
