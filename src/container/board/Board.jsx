@@ -4,6 +4,7 @@ import Pits from "../../component/pits/Pits";
 import Bank from "../../component/bank/Bank";
 import axios from "../../axios-move";
 import Spinner from "../../component/UI/Spinner/Spinner";
+import classNames from "classnames";
 
 class Board extends Component {
   state = {
@@ -154,6 +155,7 @@ class Board extends Component {
     let bankForPlayer2 = null;
 
     let board = null;
+    let activePlayerInfo = null;
     // console.log(this.state.board.pits);
     if (this.state.board) {
       pitsForPlayer1 = this.getPitsForPlayer1();
@@ -188,6 +190,19 @@ class Board extends Component {
           </div>
         </div>
       );
+
+      activePlayerInfo = (
+        <div className="h-100 d-flex justify-content-center align-items-center">
+          <div
+            className={classNames("p-2 rounded w-25", {
+              "btn-success": this.state.board.activePlayer == 1,
+              "btn-dark": this.state.board.activePlayer == 2,
+            })}
+          >
+            Active Player: {this.state.board.activePlayer}
+          </div>
+        </div>
+      );
     }
     if (this.state.loading) {
       board = <Spinner />;
@@ -213,7 +228,7 @@ class Board extends Component {
         <h4>Kalaha Board</h4>
         {error}
         {info}
-        <div className="container"></div>
+        {activePlayerInfo}
         {board}
         <div className="d-flex flex-row-reverse">
           <div className="btn btn-danger" onClick={this.resetGame}>

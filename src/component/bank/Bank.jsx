@@ -5,7 +5,7 @@ const Bank = (props) => {
   return (
     <div className="h-100 d-flex justify-content-center align-items-center">
       <div
-        className={classNames("p-2 rounded", {
+        className={classNames("p-2 rounded w-75", {
           "btn-success": props.playerNumber == 1,
           "btn-dark": props.playerNumber == 2,
         })}
@@ -14,7 +14,7 @@ const Bank = (props) => {
           <h3>{props.noOfMarbles}</h3>
         </div>
         <div className="border-top border-light p-2">
-          Bank of Player: {props.playerNumber}
+          Bank
         </div>
       </div>
     </div>
