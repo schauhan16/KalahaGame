@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-08T13:29:51.876Z" agent="5.0 (Macintosh)" etag="qGBHR3NGtW2KBaFP2ab3" version="14.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-09T11:57:16.945Z" agent="5.0 (Macintosh)" etag="PBCAOSlS4Lin8i3SH48S" version="14.1.3" type="github" pages="2">
   <diagram id="1z8tBnPE8HUcG6SX-IKS" name="Page-1">
     <mxGraphModel dx="1426" dy="778" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
@@ -253,6 +253,56 @@
               <mxPoint x="560" y="375" />
             </Array>
           </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="mMM8LFYV5ZHpQF-mgmiW" name="Page-2">
+    <mxGraphModel dx="1426" dy="778" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-0" />
+        <mxCell id="iFsD3J8xonds-a5rEDUr-1" parent="iFsD3J8xonds-a5rEDUr-0" />
+        <mxCell id="iFsD3J8xonds-a5rEDUr-2" value="&lt;&lt;GamePlay&gt;&gt;&#xa;KalahaGamePlay" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-1">
+          <mxGeometry x="160" y="40" width="310" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-3" value="# kalahaGameManager : KalahaGameManager&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="40" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-9" value="# displayService : DisplayService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="66" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-6" value="# kalahaGameManager : KalahaGameManager&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="92" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-8" value="# kalahaBoardService : boardService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="118" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-11" value="# repeatTurnRule : RepeatTurnRule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="144" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-10" value="# capturingRule : CapturingRule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="170" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-7" value="# moveValidatorService : moveValidatorService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="196" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="222" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-5" value="+ play : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="230" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-18" value="+ makeMove(int pitId) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="256" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-13" value="+ restartGame : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="282" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-17" value="# executeTurn(Player p, int pitId, int marbleCount) : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="308" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="iFsD3J8xonds-a5rEDUr-14" value="# selectPitToMove : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Tahoma;" vertex="1" parent="iFsD3J8xonds-a5rEDUr-2">
+          <mxGeometry y="334" width="310" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
